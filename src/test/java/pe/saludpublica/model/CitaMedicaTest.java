@@ -76,4 +76,19 @@ class CitaMedicaTest {
                 )
         );
     }
+    @Test
+    @DisplayName("Rechazar una cita médica cuando la fecha y hora son nulas")
+    void shouldThrowExceptionWhenDateTimeIsNull() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new CitaMedica(
+                        "6af71f49501cca046a16604b",
+                        "6af73013901d08b4673bfa5",
+                        "6af71da3501cca046a166048",
+                        null,
+                        "Acné excesivo",
+                        "PROGRAMADA"
+                )
+        );
+    }
 }
