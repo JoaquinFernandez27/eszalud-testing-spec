@@ -20,6 +20,9 @@ public class CitaMedica {
         if (doctor == null) {
             throw new IllegalArgumentException("El doctor no puede ser nulo");
         }
+        if (especialidad == null) {
+            throw new IllegalArgumentException("La especialidad no puede ser nula");
+        }
 
 
         this.paciente = paciente;
