@@ -46,4 +46,19 @@ class CitaMedicaTest {
                 )
         );
     }
+    @Test
+    @DisplayName("Rechazar una cita médica cuando el doctor es nulo")
+    void shouldThrowExceptionWhenDoctorIsNull() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new CitaMedica(
+                        "6af71f49501cca046a16604b",
+                        null,
+                        "6af71da3501cca046a166048",
+                        LocalDateTime.of(2026, 11, 26, 10, 5),
+                        "Acné excesivo",
+                        "PROGRAMADA"
+                )
+        );
+    }
 }
