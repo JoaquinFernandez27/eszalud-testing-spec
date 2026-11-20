@@ -1,0 +1,30 @@
+package pe.saludpublica.model;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class PacienteTest {
+
+    @Test
+    @DisplayName("Crear un paciente con datos válidos")
+    void shouldCreatePatientWithValidData() {
+
+        Paciente paciente = new Paciente(
+                "73891245",
+                "Pedro Miguel",
+                "Flores Chávez",
+                "978123456",
+                "pedro.flores@example.com"
+        );
+
+        assertNotNull(paciente);
+
+        assertEquals("73891245", paciente.getDocumento());
+        assertEquals("Pedro Miguel", paciente.getNombres());
+        assertEquals("Flores Chávez", paciente.getApellidos());
+        assertEquals("978123456", paciente.getTelefono());
+        assertEquals("pedro.flores@example.com", paciente.getCorreo());
+    }
+}
