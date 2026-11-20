@@ -41,4 +41,19 @@ class PacienteTest {
             );
         });
     }
+
+    @Test
+    @DisplayName("No permitir crear un paciente con nombres nulos")
+    void shouldThrowExceptionWhenNamesAreNull() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Paciente(
+                    "73891245",
+                    null,
+                    "Flores Chávez",
+                    "978123456",
+                    "pedro.flores@example.com"
+            );
+        });
+    }
 }

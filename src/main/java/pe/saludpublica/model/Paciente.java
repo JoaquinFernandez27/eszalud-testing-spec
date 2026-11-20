@@ -10,7 +10,9 @@ public class Paciente {
 
     public Paciente(String documento, String nombres,
                     String apellidos, String telefono, String correo) {
-
+        if (nombres == null) {
+            throw new IllegalArgumentException("Los nombres no pueden ser nulos");
+        }
         if (documento == null) {
             throw new IllegalArgumentException("El documento no puede ser nulo");
         }
