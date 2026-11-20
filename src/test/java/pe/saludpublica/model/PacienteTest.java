@@ -56,4 +56,18 @@ class PacienteTest {
             );
         });
     }
+    @Test
+    @DisplayName("No permitir crear un paciente con apellidos nulos")
+    void shouldThrowExceptionWhenLastNamesAreNull() {
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Paciente(
+                    "73891245",
+                    "Pedro Miguel",
+                    null,
+                    "978123456",
+                    "pedro.flores@example.com"
+            );
+        });
+    }
 }
