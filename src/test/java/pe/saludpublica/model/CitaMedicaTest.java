@@ -30,4 +30,20 @@ class CitaMedicaTest {
         assertEquals("Acné excesivo", cita.getMotivo());
         assertEquals("PROGRAMADA", cita.getEstado());
     }
+
+    @Test
+    @DisplayName("Rechazar una cita médica cuando el paciente es nulo")
+    void shouldThrowExceptionWhenPatientIsNull() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new CitaMedica(
+                        null,
+                        "6af73013901d08b4673bfa5",
+                        "6af71da3501cca046a166048",
+                        LocalDateTime.of(2026, 11, 26, 10, 5),
+                        "Acné excesivo",
+                        "PROGRAMADA"
+                )
+        );
+    }
 }
