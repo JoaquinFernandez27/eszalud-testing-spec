@@ -70,4 +70,22 @@ class PacienteTest {
             );
         });
     }
+    @Test
+    @DisplayName("Obtener correctamente los datos del paciente")
+    void shouldReturnCorrectPatientData() {
+
+        Paciente paciente = new Paciente(
+                "73891245",
+                "Pedro Miguel",
+                "Flores Chávez",
+                "978123456",
+                "pedro.flores@example.com"
+        );
+
+        assertEquals("73891245", paciente.getDocumento());
+        assertEquals("Pedro Miguel", paciente.getNombres());
+        assertEquals("Flores Chávez", paciente.getApellidos());
+        assertEquals("978123456", paciente.getTelefono());
+        assertEquals("pedro.flores@example.com", paciente.getCorreo());
+    }
 }
